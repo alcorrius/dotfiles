@@ -17,3 +17,5 @@ apt install build-essentials linux-headers-`uname -r`
 sudo nano /etc/modprobe.d/zz-nvidia-modeset.conf
 options nvidia_drm modeset=1
 sudo update-initramfs -u
+5) fix missing libs
+sudo apt install firmware-linux firmware-linux-nonfree
