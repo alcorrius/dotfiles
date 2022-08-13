@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# system
+## system
 sudo pacman -S ksysguard
 
-# editors
+## editors
 sudo pacman -S neovim
 sudo pacman -S geany
 yay -S sublime-text-4
 yay -S sublime-merge
 
-# www
+
+## www
 yay -S skypeforlinux-stable-bin
+# for skype
+sudo pacman -S gnome-keyring
