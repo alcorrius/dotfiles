@@ -1,10 +1,11 @@
 #!/bin/bash
 
 ## sys
-sudo pacman -S ksysguard filelight
-sudo pacman -S zip unzip
+sudo pacman -S ksysguard filelight htop
+sudo pacman -S zip unzip 
+sudo pacman -S sshfs fuse
 
-## edit
+## develop
 #sudo pacman -S neovim
 #sudo pacman -S geany
 yay -S sublime-text-4
@@ -13,10 +14,30 @@ yay -S sublime-merge
 sudo pacman -S code
 
 
-## develop
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 curl -s "https://get.sdkman.io" | bash
+
+#configure ssh-agent
+echo "SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket" > ~/.bashrc
+echo "[Unit]
+Description=SSH key agent
+
+[Service]
+Type=simple
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+# DISPLAY required for ssh-askpass to work
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=default.target" > ~/.config/systemd/user/ssh-agent.service
+
+systemctl --user enable ssh-agent.service
+
+## design
+
+sudo pacman -S krita blender
+yay -S blockbench
 
 
 ## www
@@ -25,9 +46,10 @@ sudo pacman -S gnome-keyring
 # skype
 yay -S skypeforlinux-stable-bin #needs reboot
 
+sudo pacman -S chromium
 
 ## fun
-sudo pacman -S steam
+sudo pacman -S steam discord
 
 ### Manual Section:
 # 1 #
@@ -40,3 +62,5 @@ sudo pacman -S steam
 # win + space = switch layout
 # 3 #
 # widgets : total cpu use, fokus
+# 4 #
+# 3D: SideFX Houdini
