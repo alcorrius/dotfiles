@@ -3,7 +3,7 @@
 ## sys
 sudo pacman -S ksysguard filelight htop
 sudo pacman -S zip unzip 
-sudo pacman -S sshfs fuse
+sudo pacman -S sshfs fuse freerdp
 
 ## develop
 #sudo pacman -S neovim
@@ -46,7 +46,12 @@ sudo pacman -S gnome-keyring
 # skype
 yay -S skypeforlinux-stable-bin #needs reboot
 
+yay -S megasync-bin
+
 sudo pacman -S chromium
+
+# vpn
+sudo pacman -S networkmanager-strongswan
 
 ## fun
 sudo pacman -S steam discord
