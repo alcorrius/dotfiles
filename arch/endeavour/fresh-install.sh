@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ## sys
-sudo pacman -S ksysguard filelight htop
-sudo pacman -S zip unzip 
+sudo pacman -S filelight htop
+sudo pacman -S zip unzip krusader kdiff3 krename
 sudo pacman -S sshfs fuse freerdp
 
 ## develop
