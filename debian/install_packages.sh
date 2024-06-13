@@ -20,6 +20,12 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt update
 sudo apt install sublime-text sublime-merge
 
+### MegaSync
+curl -fsSL https://mega.nz/keys/MEGA_signing.key | sudo apt-key add -
+echo "deb https://mega.nz/linux/repo/xUbuntu_23.04/ /" | sudo tee /etc/apt/sources.list.d/megasync.list
+sudo apt update
+sudo apt -y install megasync
+
 # node + jvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 curl -s "https://get.sdkman.io" | bash
@@ -31,4 +37,4 @@ wget https://go.skype.com/skypeforlinux-64.deb
 sudo apt install -f ./skypeforlinux-64.deb
 
 sudo apt -y install chromium
-sudo apt -y install network-manager-strongswan
+sudo apt -y install network-manager-strongswan libstrongswan-standard-plugins libstrongswan-extra-plugins
