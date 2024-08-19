@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# enable bluetooth
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
+
 ## sys
 sudo pacman -S filelight htop
 sudo pacman -S zip unzip krusader kdiff3 krename
@@ -12,9 +16,10 @@ sudo pacman -S dbeaver
 yay -S sublime-text-4
 yay -S sublime-merge
 yay -S vscodium-bin
+yay -S anaconda
 
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 curl -s "https://get.sdkman.io" | bash
 
 ##configure ssh-agent
